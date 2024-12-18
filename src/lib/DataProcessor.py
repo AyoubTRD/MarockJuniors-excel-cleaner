@@ -45,6 +45,8 @@ class DataProcessor:
             duplicate_rows = []
 
             for row2 in data:
+                if self.row_is_invalid(row2, required_fields): continue
+                
                 if self.rows_are_same_identity(row, row2, unique_fields):
                     duplicate_rows.append(row2)
             
