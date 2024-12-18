@@ -53,7 +53,8 @@ class ExcelManipulator:
   def clear_data(self):
     existing_data = self.extract_data()
 
-    for i in range(DATA_START_ROW, DATA_START_ROW + len(existing_data)):
+    # Adding 1000 just for good measure
+    for i in range(DATA_START_ROW, DATA_START_ROW + len(existing_data) + 1000):
       for column_index in range(INFO_COLUMN_START, INFO_COLUMN_END + 1):
         self.worksheet.cell(row=i, column=column_index).value = ''
       for column_index in range(ACTIVITY_COLUMN_START, ACTIVITY_COLUMN_END + 1):
