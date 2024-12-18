@@ -39,6 +39,7 @@ class ExcelManipulator:
 
       if self._row_is_empty(row):
         consecutive_empty_rows += 1
+        row_index += 1
         continue
       
       consecutive_empty_rows = 0
@@ -104,8 +105,3 @@ if __name__ == '__main__':
 
   print('-'*30 + ' Extracted data ' + '-'*30)
   for row in data: print(row)
-
-  data.pop()
-
-  manipulator.write_new_data(data)
-  manipulator.save_file('/Users/ayoub/Documents/goaluin/data-duplication-solution/tests/Example 1 - edited.xlsx')
